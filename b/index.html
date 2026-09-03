@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポートフォリオ</title>
+<style>
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+         color:#222; background:#fafafa; line-height:1.7; }
+  .wrap { max-width:900px; margin:0 auto; padding:0 20px; }
+  header { text-align:center; padding:60px 0 36px; }
+  h1 { margin:0 0 8px; font-size:2rem; }
+  header p { margin:0; color:#777; }
+  h2 { font-size:1.2rem; margin:40px 0 16px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+  .card { background:#fff; border:1px solid #e5e5e5; border-radius:6px; overflow:hidden; }
+  .thumb { height:150px; background:linear-gradient(135deg,#dfe6ee,#c9d4e0);
+           display:flex; align-items:center; justify-content:center; color:#8a97a5; font-size:.8rem; }
+  .card h3 { margin:0; padding:14px 16px; font-size:.98rem; font-weight:600; }
+  .skills { display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none; }
+  .skills li { background:#fff; border:1px solid #e5e5e5; padding:6px 14px;
+               border-radius:4px; font-size:.88rem; }
+  footer { padding:40px 0 60px; font-size:.85rem; color:#888; text-align:center; }
+  .note { margin-top:24px; padding:10px 14px; background:#f0f0f0;
+          border-left:3px solid #ddd; font-size:.8rem; color:#777; text-align:left; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Kanade</h1>
+  <p>プログラミングを勉強しています。</p>
+</header>
+
+<h2>Works</h2>
+<div class="grid">
+  <div class="card"><div class="thumb">screenshot</div><h3>掲示板アプリ</h3></div>
+  <div class="card"><div class="thumb">screenshot</div><h3>ToDoリスト</h3></div>
+  <div class="card"><div class="thumb">screenshot</div><h3>会員管理システム</h3></div>
+  <div class="card"><div class="thumb">screenshot</div><h3>じゃんけんゲーム</h3></div>
+  <div class="card"><div class="thumb">screenshot</div><h3>電卓</h3></div>
+  <div class="card"><div class="thumb">screenshot</div><h3>おみくじ</h3></div>
+</div>
+
+<h2>Skills</h2>
+<ul class="skills">
+  <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
+  <li>Java</li><li>Python</li><li>C言語</li><li>Photoshop</li><li>Illustrator</li>
+</ul>
+
+<h2>About</h2>
+<p>専門学校に通っています。よろしくお願いします。</p>
+
+<footer>
+  最終更新：2026年7月
+  <div class="note">このサイトは授業用のサンプルです。人物・団体はすべて架空のものです。</div>
+</footer>
+
+</div>
+</body>
+</html>

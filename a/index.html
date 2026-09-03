@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三田 涼介 — 業務系Webアプリを作っています</title>
+<style>
+  :root { --ink:#1a1a1a; --sub:#555; --line:#e3e3e3; --accent:#0b5fa5; --bg:#fff; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+         color:var(--ink); background:var(--bg); line-height:1.8; }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  header { padding:56px 0 40px; border-bottom:1px solid var(--line); }
+  h1 { margin:0 0 12px; font-size:1.9rem; letter-spacing:.02em; }
+  .lead { margin:0; font-size:1.05rem; color:var(--sub); }
+  .stack { margin:20px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px; }
+  .stack li { font-size:.82rem; padding:3px 10px; border:1px solid var(--line);
+              border-radius:999px; color:var(--sub); }
+  nav { padding:16px 0; border-bottom:1px solid var(--line); }
+  nav a { color:var(--accent); text-decoration:none; margin-right:20px; font-size:.92rem; }
+  nav a:hover { text-decoration:underline; }
+  h2 { margin:48px 0 8px; font-size:1.3rem; }
+  .work { padding:28px 0; border-bottom:1px solid var(--line); }
+  .work h3 { margin:0 0 4px; font-size:1.1rem; }
+  .work .meta { margin:0 0 16px; font-size:.85rem; color:var(--sub); }
+  .work dl { margin:0; }
+  .work dt { font-weight:600; font-size:.9rem; margin-top:14px; color:var(--accent); }
+  .work dd { margin:4px 0 0; }
+  footer { padding:40px 0 60px; font-size:.85rem; color:var(--sub); }
+  .note { margin-top:24px; padding:10px 14px; background:#f7f7f7;
+          border-left:3px solid var(--line); font-size:.8rem; color:var(--sub); }
+  @media (max-width:600px) { h1 { font-size:1.5rem; } header { padding:36px 0 28px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>三田 涼介</h1>
+  <p class="lead">
+    <strong>在庫や予約など、現場の困りごとを解くWebアプリを作っています。</strong><br>
+    PHP と MySQL での業務系アプリが中心です。設計から作るのが好きです。
+  </p>
+  <ul class="stack">
+    <li>PHP</li><li>MySQL</li><li>HTML / CSS</li><li>JavaScript</li><li>Git</li>
+  </ul>
+</header>
+
+<nav>
+  <a href="#works">作ったもの</a>
+  <a href="#about">経歴</a>
+  <a href="#contact">連絡先</a>
+</nav>
+
+<h2 id="works">作ったもの</h2>
+
+<article class="work">
+  <h3>部室の備品貸出システム</h3>
+  <p class="meta">2026年6月 / 個人開発 / PHP・MySQL</p>
+  <dl>
+    <dt>なぜ作ったか</dt>
+    <dd>所属している部で、備品の貸出をホワイトボードで管理していました。誰が何を借りているか
+        分からなくなることが月に何度もあり、返却漏れも起きていました。</dd>
+    <dt>何をしたか</dt>
+    <dd>貸出・返却・在庫の3テーブルで設計し、貸出中の一覧と返却期限の超過を一覧で出せるようにしました。
+        部員20人が実際に使っています。</dd>
+    <dt>詰まったところ</dt>
+    <dd>同じ備品を2人が同時に借りられてしまうバグが出ました。貸出の登録と在庫数の更新を
+        別々に実行していたためです。</dd>
+    <dt>どう解決したか</dt>
+    <dd>トランザクションで囲み、在庫数の更新に条件を付けて、在庫が0のときは登録が通らないようにしました。
+        「2つの処理が途中で割り込まれる」という発想が最初は無く、原因の特定に3日かかりました。</dd>
+    <dt>今なら変えること</dt>
+    <dd>返却期限の通知が手動確認です。メール送信を自動化したいです。</dd>
+  </dl>
+</article>
+
+<article class="work">
+  <h3>アルバイト先のシフト希望集約ツール</h3>
+  <p class="meta">2026年3月 / 個人開発 / PHP・MySQL</p>
+  <dl>
+    <dt>なぜ作ったか</dt>
+    <dd>アルバイト先でシフト希望をLINEで集めていて、店長が毎月2時間かけて表に転記していました。</dd>
+    <dt>何をしたか</dt>
+    <dd>希望を入力するフォームと、日付ごとの人数が見える集計画面を作りました。
+        転記の作業がなくなりました。</dd>
+    <dt>詰まったところ</dt>
+    <dd>スマートフォンからの入力が主なのに、PCの画面幅で作っていて使えませんでした。</dd>
+    <dt>どう解決したか</dt>
+    <dd>入力欄を縦に並べ直し、日付の選択をカレンダー入力に変えました。
+        「誰がどの端末で使うか」を先に決めるべきだったと反省しています。</dd>
+  </dl>
+</article>
+
+<article class="work">
+  <h3>蔵書管理アプリ（授業課題）</h3>
+  <p class="meta">2026年1月 / 授業課題（DB設計）/ PHP・MySQL</p>
+  <dl>
+    <dt>なぜ作ったか</dt>
+    <dd>授業の課題ですが、正規化を自分で判断する経験がしたかったので、
+        貸出履歴を持つところまで自分で広げました。</dd>
+    <dt>詰まったところ</dt>
+    <dd>著者と本を1つのテーブルに入れていて、共著の本が登録できませんでした。</dd>
+    <dt>どう解決したか</dt>
+    <dd>中間テーブルを作って多対多に直しました。設計を間違えると後から直すのが大変だと分かりました。</dd>
+  </dl>
+</article>
+
+<h2 id="about">経歴</h2>
+<p>専門学校2年。前期にデータベース設計・PHP・SQLを履修。現在はWebアプリの公開と運用を学んでいます。</p>
+
+<h2 id="contact">連絡先</h2>
+<p>ryosuke-mita@example.com</p>
+
+<footer>
+  最終更新：2026年8月28日
+  <div class="note">このサイトは授業用のサンプルです。人物・団体はすべて架空のものです。</div>
+</footer>
+
+</div>
+</body>
+</html>
